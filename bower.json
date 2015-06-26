@@ -1,0 +1,29 @@
+{
+  "name": "bubble",
+  "version": "0.0.1",
+  "authors": [
+    "Stefan Merkel <merkel.s.ulm@gmail.com>"
+  ],
+  "description": "-",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer"
+  ],
+  "main": "index.html",
+  "license": "-",
+  "homepage": "https://github.com/stefanmerkel/bubble/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+	"bs-bootstrap": "stefanmerkel/bs-bootstrap",
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}
