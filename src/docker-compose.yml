@@ -5,3 +5,11 @@ services:
     volumes:
       - ./volumes/bubble-polymer-app/build/bundled:/bubble-polymer-app/build/bundled
       - ./volumes/bubble-polymer-app/build/unbundled:/bubble-polymer-app/build/unbundled
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./volumes/bubble-polymer-app/build/bundled:/usr/share/nginx/html:ro
+    ports:
+      - 80:80
+    depends_on:
+      - bubble-polymer-app
