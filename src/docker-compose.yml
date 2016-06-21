@@ -1,4 +1,4 @@
 version: '2.0'
 services:
   bubble-polymer-app:
-    image: node:4.4.5
+    build: ./bubble-polymer-app
