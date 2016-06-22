@@ -15,5 +15,11 @@ set -e
 eval $(docker-machine env $DOCKER_MACHINE_NAME)
 
 cd ./src/
-docker-compose build
+
+#docker-compose stop
+#docker-compose rm -fa
+
+docker-compose build #--no-cache
 docker-compose up
+
+echo "ip: " $(docker-machine ip $DOCKER_MACHINE_NAME)

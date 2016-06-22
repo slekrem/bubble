@@ -1,15 +1,18 @@
 version: '2.0'
 services:
-  bubble-polymer-app:
-    build: ./bubble-polymer-app
-    volumes:
-      - ./volumes/bubble-polymer-app/build/bundled:/bubble-polymer-app/build/bundled
-      - ./volumes/bubble-polymer-app/build/unbundled:/bubble-polymer-app/build/unbundled
-  nginx:
-    image: nginx:latest
-    volumes:
-      - ./volumes/bubble-polymer-app/build/bundled:/usr/share/nginx/html:ro
-    ports:
-      - 80:80
-    depends_on:
-      - bubble-polymer-app
+    bubble-polymer-app:
+        build: ./bubble-polymer-app
+        volumes:
+            - ./volumes/bubble-polymer-app/build/bundled:/app/build/bundled
+            - ./volumes/bubble-polymer-app/build/unbundled:/app/build/unbundled
+        environment:
+            - REPOSITORY=https://github.com/stefanmerkel/bubble-polymer-app.git
+            - REPOSITORY_NAME=bubble-polymer-app
+    nginx:
+        image: nginx:latest
+        volumes:
+            - ./volumes/bubble-polymer-app/build/bundled:/usr/share/nginx/html:ro
+        ports:
+            - 80:80
+        depends_on:
+            - bubble-polymer-app
